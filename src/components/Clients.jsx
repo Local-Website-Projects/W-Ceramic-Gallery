@@ -36,85 +36,96 @@ function Clients() {
                              className="pq-client-box-slider pq-client-style-1 pq-p-45-90 owl-carousel">
                             {/* Slider items here */}
                             <div className="item">
-                                <div className="pq-client-box">
+                                <div className="pq-client-box pq-client-style-1">
                                     <a>
-                                        <img src="assets/images/client/1.png" alt="pq-client-img"
+                                        <img src="assets/images/client/7.png" alt="pq-client-img"
                                              className="pq-client-img"/>
+                                        <img src="assets/images/client/h7.png" alt="pq-client-img"
+                                             className="pq-client-hover-img"/>
                                     </a>
                                 </div>
                             </div>
                             <div className="item">
-                                <div className="pq-client-box">
+                                <div className="pq-client-box pq-client-style-1">
                                     <a>
-                                        <img src="assets/images/client/1.png" alt="pq-client-img"
+                                        <img src="assets/images/client/7.png" alt="pq-client-img"
                                              className="pq-client-img"/>
+                                        <img src="assets/images/client/h7.png" alt="pq-client-img"
+                                             className="pq-client-hover-img"/>
                                     </a>
                                 </div>
                             </div>
                             <div className="item">
-                                <div className="pq-client-box">
+                                <div className="pq-client-box pq-client-style-1">
                                     <a>
-                                        <img src="assets/images/client/1.png" alt="pq-client-img"
+                                        <img src="assets/images/client/7.png" alt="pq-client-img"
                                              className="pq-client-img"/>
+                                        <img src="assets/images/client/h7.png" alt="pq-client-img"
+                                             className="pq-client-hover-img"/>
                                     </a>
                                 </div>
                             </div>
                             <div className="item">
-                                <div className="pq-client-box">
+                                <div className="pq-client-box pq-client-style-1">
                                     <a>
-                                        <img src="assets/images/client/1.png" alt="pq-client-img"
+                                        <img src="assets/images/client/7.png" alt="pq-client-img"
                                              className="pq-client-img"/>
+                                        <img src="assets/images/client/h7.png" alt="pq-client-img"
+                                             className="pq-client-hover-img"/>
                                     </a>
                                 </div>
                             </div>
                             <div className="item">
-                                <div className="pq-client-box">
+                                <div className="pq-client-box pq-client-style-1">
                                     <a>
-                                        <img src="assets/images/client/1.png" alt="pq-client-img"
+                                        <img src="assets/images/client/7.png" alt="pq-client-img"
                                              className="pq-client-img"/>
+                                        <img src="assets/images/client/h7.png" alt="pq-client-img"
+                                             className="pq-client-hover-img"/>
                                     </a>
                                 </div>
                             </div>
                             <div className="item">
-                                <div className="pq-client-box">
+                                <div className="pq-client-box pq-client-style-1">
                                     <a>
-                                        <img src="assets/images/client/1.png" alt="pq-client-img"
+                                        <img src="assets/images/client/7.png" alt="pq-client-img"
                                              className="pq-client-img"/>
+                                        <img src="assets/images/client/h7.png" alt="pq-client-img"
+                                             className="pq-client-hover-img"/>
                                     </a>
                                 </div>
                             </div>
                             <div className="item">
-                                <div className="pq-client-box">
+                                <div className="pq-client-box pq-client-style-1">
                                     <a>
-                                        <img src="assets/images/client/1.png" alt="pq-client-img"
+                                        <img src="assets/images/client/7.png" alt="pq-client-img"
                                              className="pq-client-img"/>
+                                        <img src="assets/images/client/h7.png" alt="pq-client-img"
+                                             className="pq-client-hover-img"/>
                                     </a>
                                 </div>
                             </div>
                             <div className="item">
-                                <div className="pq-client-box">
+                                <div className="pq-client-box pq-client-style-1">
                                     <a>
-                                        <img src="assets/images/client/1.png" alt="pq-client-img"
+                                        <img src="assets/images/client/7.png" alt="pq-client-img"
                                              className="pq-client-img"/>
+                                        <img src="assets/images/client/h7.png" alt="pq-client-img"
+                                             className="pq-client-hover-img"/>
                                     </a>
                                 </div>
                             </div>
                             <div className="item">
-                                <div className="pq-client-box">
+                                <div className="pq-client-box pq-client-style-1">
                                     <a>
-                                        <img src="assets/images/client/1.png" alt="pq-client-img"
+                                        <img src="assets/images/client/7.png" alt="pq-client-img"
                                              className="pq-client-img"/>
+                                        <img src="assets/images/client/h7.png" alt="pq-client-img"
+                                             className="pq-client-hover-img"/>
                                     </a>
                                 </div>
                             </div>
-                            <div className="item">
-                                <div className="pq-client-box">
-                                    <a>
-                                        <img src="assets/images/client/1.png" alt="pq-client-img"
-                                             className="pq-client-img"/>
-                                    </a>
-                                </div>
-                            </div>
+
                             {/* Repeat for other client items */}
                         </div>
                     </div>

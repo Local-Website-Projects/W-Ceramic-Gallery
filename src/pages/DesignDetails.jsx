@@ -5,6 +5,7 @@ import {Link, useLocation} from "react-router-dom";
 import Footer from "../components/Footer";
 
 function DesignDetails() {
+
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const value = queryParams.get('value') || 'Default Title';

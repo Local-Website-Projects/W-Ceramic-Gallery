@@ -7,6 +7,29 @@ import Testimonials from "../components/Testimonials";
 import $ from 'jquery';
 
 function Home() {
+    useEffect(() => {
+        if (typeof window !== "undefined" && window.jQuery) {
+            // Initialize the client slider
+            window.jQuery("#showroomSelection").owlCarousel({
+                items: 6, // Show 6 items at a time
+                loop: true, // Loop through the items
+                autoplay: true, // Autoplay
+                autoplayTimeout: 5000, // Autoplay timeout
+                nav: false, // No navigation arrows
+                dots: true, // Show navigation dots
+                margin: 30, // Margin between items
+            });
+            window.jQuery("#designSample").owlCarousel({
+                items: 4, // Show 6 items at a time
+                loop: true, // Loop through the items
+                autoplay: true, // Autoplay
+                autoplayTimeout: 5000, // Autoplay timeout
+                nav: false, // No navigation arrows
+                dots: true, // Show navigation dots
+                margin: 30, // Margin between items
+            });
+        }
+    }, []);
     return (
         <div>
             <Header></Header>
@@ -293,10 +316,7 @@ function Home() {
                             <div className="divider pq-left-border pq-45"></div>
                         </div>
                         <div className="col-lg-12 wow animated fadeInUp">
-                            <div className="owl-carousel owl-loaded owl-drag" data-dots="true" data-nav="false"
-                                 data-desk_num="6"
-                                 data-lap_num="4" data-tab_num="3" data-mob_num="2" data-mob_sm="2" data-autoplay="true"
-                                 data-loop="true" data-margin="45">
+                            <div className="owl-carousel owl-loaded owl-drag" id="showroomSelection">
                                 <div className="item">
                                     <div className="pq-image-box pq-style-1  text-center">
                                         <div className="pq-image-box-media">
@@ -429,12 +449,7 @@ function Home() {
                         </div>
                         <div className="col-lg-12 wow animated fadeInUp">
                             <div className="pq-portfoliobox pq-portfoliobox-style-1 pq-me-320">
-                                <div className="owl-carousel owl-loaded owl-drag" data-dots="true" data-nav="false"
-                                     data-desk_num="4"
-                                     data-lap_num="2"
-                                     data-tab_num="2" data-mob_num="1" data-mob_sm="1" data-autoplay="false"
-                                     data-loop="true"
-                                     data-margin="30">
+                                <div className="owl-carousel owl-loaded owl-drag" id="designSample">
                                     <div className="item">
                                         <div className="pq-portfoliobox-1">
                                             <div className="pq-portfolio-block">
