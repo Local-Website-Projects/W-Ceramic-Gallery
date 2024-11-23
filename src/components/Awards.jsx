@@ -1,18 +1,36 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useRef} from "react";
 
 function Awards() {
+    const carouselNewRef = useRef(null);
+
     useEffect(() => {
         if (typeof window !== "undefined" && window.jQuery) {
-            // Initialize the client slider
-            window.jQuery("#awards").owlCarousel({
-                items: 6, // Show 6 items at a time
-                loop: true, // Loop through the items
-                autoplay: true, // Autoplay
-                autoplayTimeout: 5000, // Autoplay timeout
-                nav: false, // No navigation arrows
-                dots: true, // Show navigation dots
-                margin: 30, // Margin between items
-            });
+            if (!carouselNewRef.current.classList.contains('initialized')) {
+                window.jQuery(carouselNewRef.current).owlCarousel({
+                    items: 6,
+                    loop: true,
+                    autoplay: true,
+                    autoplayTimeout: 5000,
+                    nav: false,
+                    dots: true,
+                    margin: 30,
+                    responsive: {
+                        0: {
+                            items: 2,
+                        },
+                        480: {
+                            items: 2,
+                        },
+                        768: {
+                            items: 4,
+                        },
+                        992: {
+                            items: 6,
+                        },
+                    },
+                });
+                carouselNewRef.current.classList.add('initialized');
+            }
         }
     }, []);
     return (
@@ -31,7 +49,7 @@ function Awards() {
                         </div>
                         <div className="col-lg-12 wow animated fadeInLeft">
                             <div className="pq-awardbox-1-slider pq-awardbox-1">
-                                <div className="owl-carousel owl-loaded owl-drag" id="awards">
+                                <div className="owl-carousel owl-loaded owl-drag" id="awards" ref={carouselNewRef}>
                                     <div className="item">
                                         <div className="pq-awardbox-1">
                                             <a>

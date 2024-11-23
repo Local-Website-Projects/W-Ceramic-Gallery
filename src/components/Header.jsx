@@ -11,77 +11,6 @@ function Header() {
         <div>
             {/* Header */}
             <div className="pq-background-overlay"></div>
-            <div className="pq-sidebar">
-                <div className="pq-close-btn">
-                    <a className="pq-close" href="javascript:void(0)">
-                        <i className="ion-close-round"></i>
-                    </a>
-                </div>
-                <div className="pq-sidebar-block">
-                    <div className="pq-sidebar-header">
-                        <img src="assets/images/Logo/logo.png" className="pq-sidebar-logo" alt="marblex-sidebar-logo"/>
-                    </div>
-                    <div className="pq-sidebar-content">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. search for will
-                            uncover
-                            many web sites still.</p>
-                    </div>
-                    <div className="pq-sidebars">
-                        <div className="pq-widget">
-                            <div className="wp-block-group">
-                                <div className="wp-block-group__inner-container">
-                                    <h2>Gallery</h2>
-                                    <div className="row">
-                                        <div className="col-lg-4">
-                                            <img src="assets/images/gallery/1.jpg" alt=""/>
-                                        </div>
-                                        <div className="col-lg-4">
-                                            <img src="assets/images/gallery/2.jpg" alt=""/>
-                                        </div>
-                                        <div className="col-lg-4">
-                                            <img src="assets/images/gallery/3.jpg" alt=""/>
-                                        </div>
-                                        <div className="col-lg-4 mt-4">
-                                            <img src="assets/images/gallery/4.jpg" alt=""/>
-                                        </div>
-                                        <div className="col-lg-4 mt-4">
-                                            <img src="assets/images/gallery/5.jpg" alt=""/>
-                                        </div>
-                                        <div className="col-lg-4 mt-4">
-                                            <img src="assets/images/gallery/6.jpg" alt=""/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="pq-sidebar-contact">
-                        <ul className="pq-contact">
-                            <li>
-                                <i className="fa fa-map-marker"></i>
-                                <span> Themeforest, Envato HQ 24 Fifth st., Los Angeles, USA </span>
-                            </li>
-                            <li>
-                                <a href="tel:+1800001658"><i className="fa fa-phone"></i>
-                                    <span> +1800-001-658</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="mailto:info@peacefulthemes.com"><i
-                                    className="fa fa-envelope"></i><span>info@peacefulthemes.com</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="pq-sidebar-social">
-                        <ul>
-                            <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i className="fab fa-google-plus-g"></i></a></li>
-                            <li><a href="#"><i className="fab fa-instagram"></i></a></li>
-                            <li><a href="#"><i className="fab fa-pinterest"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
             <header id="pq-header" className="pq-header-style-1  pq-has-sticky mb-3">
                 <div className="pq-header-diff-block">
                     <div className="row g-0">
@@ -184,11 +113,6 @@ function Header() {
                                                             className="screen-reader-text">Search</span></button>
                                                     </form>
                                                 </div>
-                                            </div>
-                                            <div className="pq-toggle-btn">
-                                                <a href="javascript:void(0)" className="menu-toggle">
-                                                    <span>menu</span>
-                                                </a>
                                             </div>
                                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#navbarSupportedContent"

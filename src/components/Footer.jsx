@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 function Footer() {
+    const currentYear = new Date().getFullYear();
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -65,13 +66,13 @@ function Footer() {
                                         <div className="menu-navigate-menu-container">
                                             <ul id="menu-navigate-menu" className="menu">
                                                 <li className="menu-item">
-                                                    <a href="index.html" aria-current="page">Marble</a>
+                                                    <Link to="/" aria-current="page">Ceramic Gallery</Link>
                                                 </li>
                                                 <li className="menu-item">
-                                                    <a href="">About us</a>
+                                                    <Link to="/about">About us</Link>
                                                 </li>
                                                 <li className="menu-item">
-                                                    <a href="">service</a>
+                                                    <Link to="/Design-Idea">Design Idea</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -79,17 +80,17 @@ function Footer() {
                                 </div>
                                 <div className="col-lg-3  col-md-6">
                                     <div className="widget">
-                                        <h4 className="footer-title">our Services</h4>
+                                        <h4 className="footer-title">Useful Links</h4>
                                         <div className="menu-product-menu-container">
                                             <ul id="menu-product-menu" className="menu">
                                                 <li className="menu-item">
-                                                    <a href="">Carpets & Rugs</a>
+                                                    <Link to="/ShowRoom">Show Rooms</Link>
                                                 </li>
                                                 <li className="menu-item">
-                                                    <a href="">Industrial Flooring</a>
+                                                    <Link to="/Tile-Calculator">Tile Calculator</Link>
                                                 </li>
                                                 <li className="menu-item">
-                                                    <a href="laminate-flooring.html">Laminate Flooring</a>
+                                                    <Link to="/Contact-Us">Contact</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -129,7 +130,7 @@ function Footer() {
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-12 align-self-center">
-                                    <span className="pq-copyright">Copyright 2023 Marblex All Rights Reserved.</span>
+                                    <span className="pq-copyright">Copyright {currentYear} Ceramic Gallery All Rights Reserved.</span>
                                 </div>
                             </div>
                         </div>

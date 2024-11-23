@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react'
+import React, {useRef, useEffect } from 'react'
 import {Link} from "react-router-dom";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -7,27 +7,68 @@ import Testimonials from "../components/Testimonials";
 import $ from 'jquery';
 
 function Home() {
+    const carouselRef = useRef(null);
+    const carouselRefNew = useRef(null);
     useEffect(() => {
         if (typeof window !== "undefined" && window.jQuery) {
-            // Initialize the client slider
-            window.jQuery("#showroomSelection").owlCarousel({
-                items: 6, // Show 6 items at a time
-                loop: true, // Loop through the items
-                autoplay: true, // Autoplay
-                autoplayTimeout: 5000, // Autoplay timeout
-                nav: false, // No navigation arrows
-                dots: true, // Show navigation dots
-                margin: 30, // Margin between items
-            });
-            window.jQuery("#designSample").owlCarousel({
-                items: 4, // Show 6 items at a time
-                loop: true, // Loop through the items
-                autoplay: true, // Autoplay
-                autoplayTimeout: 5000, // Autoplay timeout
-                nav: false, // No navigation arrows
-                dots: true, // Show navigation dots
-                margin: 30, // Margin between items
-            });
+            // Initialize the carousel only if it's not already initialized
+            if (!carouselRef.current.classList.contains('initialized')) {
+                window.jQuery(carouselRef.current).owlCarousel({
+                    items: 6,  // Default to 6 items
+                    loop: true,  // Enable looping of items
+                    autoplay: true,  // Enable autoplay
+                    autoplayTimeout: 5000,  // Time before transitioning to next slide
+                    nav: false,  // Disable navigation arrows
+                    dots: true,  // Enable dots for navigation
+                    margin: 30,  // Margin between items
+                    responsive: {
+                        0: {
+                            items: 2,  // 2 items on mobile (0px - 480px)
+                        },
+                        480: {
+                            items: 2,  // 2 items on small screens (480px - 768px)
+                        },
+                        768: {
+                            items: 4,  // 4 items on medium screens (768px - 992px)
+                        },
+                        992: {
+                            items: 6,  // 6 items on larger screens (992px and up)
+                        },
+                    },
+                });
+
+                // Mark the carousel as initialized to avoid re-initialization
+                carouselRef.current.classList.add('initialized');
+            }
+
+            if (!carouselRefNew.current.classList.contains('initialized')) {
+                window.jQuery(carouselRefNew.current).owlCarousel({
+                    items: 4,  // Default to 6 items
+                    loop: true,  // Enable looping of items
+                    autoplay: true,  // Enable autoplay
+                    autoplayTimeout: 5000,  // Time before transitioning to next slide
+                    nav: false,  // Disable navigation arrows
+                    dots: true,  // Enable dots for navigation
+                    margin: 30,  // Margin between items
+                    responsive: {
+                        0: {
+                            items: 1,
+                        },
+                        480: {
+                            items: 1,
+                        },
+                        768: {
+                            items: 2,
+                        },
+                        992: {
+                            items: 4,
+                        },
+                    },
+                });
+
+                // Mark the carousel as initialized to avoid re-initialization
+                carouselRefNew.current.classList.add('initialized');
+            }
         }
     }, []);
     return (
@@ -64,13 +105,13 @@ function Home() {
                         </div>
                         <div className="col-lg-4 col-md-4 wow animated fadeInRight">
                             <div className="button-align">
-                                <a className="pq-button pq-button-flat" href="about-us.html">
+                                <Link className="pq-button pq-button-flat" to="">
                                     <div className="pq-button-block">
                                         <span className="pq-button-text">read more </span>
                                         <span className="pq-button-line-right"></span>
                                         <i className="ion ion-ios-arrow-right"></i>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-12 wow animated fadeInRight">
@@ -92,7 +133,7 @@ function Home() {
                                         Lorem Ipsum
                                         available majority </p>
                                     <div className="pq-btn-container">
-                                        <a className="pq-button pq-button-link" href="carpets-rugs.html">
+                                        <Link className="pq-button pq-button-link" to="/Design-Details?value=Drawing Room">
                                             <div className="pq-button-block">
                                                 <div className="pq-svg">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="64.356"
@@ -118,7 +159,7 @@ function Home() {
                                                     </svg>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -137,8 +178,8 @@ function Home() {
                                         Lorem Ipsum
                                         available majority </p>
                                     <div className="pq-btn-container">
-                                        <a className="pq-button pq-button-link"
-                                           href="laminate-flooring.html">
+                                        <Link className="pq-button pq-button-link"
+                                           to="">
                                             <div className="pq-button-block">
                                                 <div className="pq-svg">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="64.356"
@@ -164,7 +205,7 @@ function Home() {
                                                     </svg>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -183,7 +224,7 @@ function Home() {
                                         Lorem Ipsum
                                         available majority </p>
                                     <div className="pq-btn-container">
-                                        <a className="pq-button pq-button-link" href="vinyl-flooring.html">
+                                        <Link className="pq-button pq-button-link" to="">
                                             <div className="pq-button-block">
                                                 <div className="pq-svg">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="64.356"
@@ -208,7 +249,7 @@ function Home() {
                                                     </svg>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -303,26 +344,24 @@ function Home() {
                         </div>
                         <div className="col-lg-4 col-md-4 wow animated fadeInLeft">
                             <div className="button-align">
-                                <a className="pq-button pq-button-flat" href="about-us.html">
+                                <Link className="pq-button pq-button-flat" to="">
                                     <div className="pq-button-block">
                                         <span className="pq-button-text">read more </span>
                                         <span className="pq-button-line-right"></span>
                                         <i className="ion ion-ios-arrow-right"></i>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-12">
                             <div className="divider pq-left-border pq-45"></div>
                         </div>
                         <div className="col-lg-12 wow animated fadeInUp">
-                            <div className="owl-carousel owl-loaded owl-drag" id="showroomSelection">
+                            <div className="owl-carousel owl-loaded owl-drag" id="showroomSelection" ref={carouselRef}>
                                 <div className="item">
                                     <div className="pq-image-box pq-style-1  text-center">
                                         <div className="pq-image-box-media">
-                                            <a>
                                                 <img decoding="async" src="assets/images/stone/1.png" alt="box"/>
-                                            </a>
                                         </div>
                                         <div className="pq-image-box-info">
                                             <h5 className="pq-image-box-title"><a> Marble</a></h5>
@@ -332,9 +371,7 @@ function Home() {
                                 <div className="item">
                                     <div className="pq-image-box pq-style-1  text-center">
                                         <div className="pq-image-box-media">
-                                            <a>
                                                 <img decoding="async" src="assets/images/stone/2.png" alt="box"/>
-                                            </a>
                                         </div>
                                         <div className="pq-image-box-info">
                                             <h5 className="pq-image-box-title"><a> limestone</a></h5>
@@ -344,9 +381,7 @@ function Home() {
                                 <div className="item">
                                     <div className="pq-image-box pq-style-1  text-center">
                                         <div className="pq-image-box-media">
-                                            <a>
                                                 <img decoding="async" src="assets/images/stone/3.png" alt="box"/>
-                                            </a>
                                         </div>
                                         <div className="pq-image-box-info">
                                             <h5 className="pq-image-box-title"><a> onyx</a></h5>
@@ -356,9 +391,7 @@ function Home() {
                                 <div className="item">
                                     <div className="pq-image-box pq-style-1  text-center">
                                         <div className="pq-image-box-media">
-                                            <a>
                                                 <img decoding="async" src="assets/images/stone/4.png" alt="box"/>
-                                            </a>
                                         </div>
                                         <div className="pq-image-box-info">
                                             <h5 className="pq-image-box-title"><a> quartz</a></h5>
@@ -368,9 +401,7 @@ function Home() {
                                 <div className="item">
                                     <div className="pq-image-box pq-style-1  text-center">
                                         <div className="pq-image-box-media">
-                                            <a>
                                                 <img decoding="async" src="assets/images/stone/5.png" alt="box"/>
-                                            </a>
                                         </div>
                                         <div className="pq-image-box-info">
                                             <h5 className="pq-image-box-title"><a> granite</a></h5>
@@ -380,9 +411,7 @@ function Home() {
                                 <div className="item">
                                     <div className="pq-image-box pq-style-1  text-center">
                                         <div className="pq-image-box-media">
-                                            <a>
                                                 <img decoding="async" src="assets/images/stone/6.png" alt="box"/>
-                                            </a>
                                         </div>
                                         <div className="pq-image-box-info">
                                             <h5 className="pq-image-box-title"><a> travertine</a></h5>
@@ -392,9 +421,7 @@ function Home() {
                                 <div className="item">
                                     <div className="pq-image-box pq-style-1  text-center">
                                         <div className="pq-image-box-media">
-                                            <a>
                                                 <img decoding="async" src="assets/images/stone/7.png" alt="box"/>
-                                            </a>
                                         </div>
                                         <div className="pq-image-box-info">
                                             <h5 className="pq-image-box-title"><a> travertine</a></h5>
@@ -404,9 +431,7 @@ function Home() {
                                 <div className="item">
                                     <div className="pq-image-box pq-style-1  text-center">
                                         <div className="pq-image-box-media">
-                                            <a>
                                                 <img decoding="async" src="assets/images/stone/8.png" alt="box"/>
-                                            </a>
                                         </div>
                                         <div className="pq-image-box-info">
                                             <h5 className="pq-image-box-title"><a> onyx</a></h5>
@@ -435,13 +460,13 @@ function Home() {
                         </div>
                         <div className="col-lg-4 col-md-4 wow animated fadeInRight">
                             <div className="button-align">
-                                <a className="pq-button pq-button-flat" href="laminate-flooring.html">
+                                <Link className="pq-button pq-button-flat" to="/Design-Idea">
                                     <div className="pq-button-block">
                                         <span className="pq-button-text">view more</span>
                                         <span className="pq-button-line-right"></span>
                                         <i className="ion ion-ios-arrow-right"></i>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-12">
@@ -449,7 +474,7 @@ function Home() {
                         </div>
                         <div className="col-lg-12 wow animated fadeInUp">
                             <div className="pq-portfoliobox pq-portfoliobox-style-1 pq-me-320">
-                                <div className="owl-carousel owl-loaded owl-drag" id="designSample">
+                                <div className="owl-carousel owl-loaded owl-drag" id="designSample" ref={carouselRefNew}>
                                     <div className="item">
                                         <div className="pq-portfoliobox-1">
                                             <div className="pq-portfolio-block">
@@ -458,12 +483,12 @@ function Home() {
                                                          alt=""/>
                                                 </div>
                                                 <div className="pq-portfolio-info">
-                                                    <h5><a href="portfolio-single.html">indoor court</a></h5>
-                                                    <span> <a href="portfolio-single.html">Laminate</a>
+                                                    <h5><a href="Design-Details?value=Drawing Room">indoor court</a></h5>
+                                                    <span> <a href="Design-Details?value=Drawing Room">Laminate</a>
                                             </span>
                                                 </div>
                                                 <div className="pq-btn-container">
-                                                    <a href="portfolio-single.html"
+                                                    <a href="Design-Details?value=Drawing Room"
                                                        className="pq-button pq-button-link">
                                                         <div className="pq-button-block">
                                                             <div className="pq-svg">
@@ -508,14 +533,14 @@ function Home() {
                                                          alt=""/>
                                                 </div>
                                                 <div className="pq-portfolio-info">
-                                                    <h5><a href="portfolio-single.html">Awesome
+                                                    <h5><a href="Design-Details?value=Drawing Room">Awesome
                                                         Outdoor
                                                         Project</a></h5>
-                                                    <span> <a href="portfolio-single.html">Laminate</a>
+                                                    <span> <a href="Design-Details?value=Drawing Room">Laminate</a>
                                             </span>
                                                 </div>
                                                 <div className="pq-btn-container">
-                                                    <a href="portfolio-single.html"
+                                                    <a href="Design-Details?value=Drawing Room"
                                                        className="pq-button pq-button-link">
                                                         <div className="pq-button-block">
                                                             <div className="pq-svg">
@@ -560,14 +585,14 @@ function Home() {
                                                          alt=""/>
                                                 </div>
                                                 <div className="pq-portfolio-info">
-                                                    <h5><a href="portfolio-single.html">kitchen
+                                                    <h5><a href="Design-Details?value=Drawing Room">kitchen
                                                         renovation</a>
                                                     </h5>
-                                                    <span> <a href="portfolio-single.html">flooring</a>
+                                                    <span> <a href="Design-Details?value=Drawing Room">flooring</a>
                                             </span>
                                                 </div>
                                                 <div className="pq-btn-container">
-                                                    <a href="portfolio-single.html"
+                                                    <a href="Design-Details?value=Drawing Room"
                                                        className="pq-button pq-button-link">
                                                         <div className="pq-button-block">
                                                             <div className="pq-svg">
@@ -612,14 +637,14 @@ function Home() {
                                                          alt=""/>
                                                 </div>
                                                 <div className="pq-portfolio-info">
-                                                    <h5><a href="portfolio-single.html">Industrial
+                                                    <h5><a href="Design-Details?value=Drawing Room">Industrial
                                                         Flooring</a>
                                                     </h5>
-                                                    <span> <a href="portfolio-single.html">flooring</a>
+                                                    <span> <a href="Design-Details?value=Drawing Room">flooring</a>
                                             </span>
                                                 </div>
                                                 <div className="pq-btn-container">
-                                                    <a href="portfolio-single.html"
+                                                    <a href="Design-Details?value=Drawing Room"
                                                        className="pq-button pq-button-link">
                                                         <div className="pq-button-block">
                                                             <div className="pq-svg">
@@ -665,13 +690,13 @@ function Home() {
                                                 </div>
                                                 <div className="pq-portfolio-info">
                                                     <h5><a
-                                                        href="portfolio-single.html">eco-friendly-flooring</a>
+                                                        href="Design-Details?value=Drawing Room">eco-friendly-flooring</a>
                                                     </h5>
-                                                    <span> <a href="portfolio-single.html">marble</a>
+                                                    <span> <a href="Design-Details?value=Drawing Room">marble</a>
                                             </span>
                                                 </div>
                                                 <div className="pq-btn-container">
-                                                    <a href="portfolio-single.html"
+                                                    <a href="Design-Details?value=Drawing Room"
                                                        className="pq-button pq-button-link">
                                                         <div className="pq-button-block">
                                                             <div className="pq-svg">
@@ -716,13 +741,13 @@ function Home() {
                                                          alt=""/>
                                                 </div>
                                                 <div className="pq-portfolio-info">
-                                                    <h5><a href="portfolio-single.html">Laminate
+                                                    <h5><a href="Design-Details?value=Drawing Room">Laminate
                                                         Flooring</a></h5>
-                                                    <span> <a href="portfolio-single.html">flooring</a>
+                                                    <span> <a href="Design-Details?value=Drawing Room">flooring</a>
                                             </span>
                                                 </div>
                                                 <div className="pq-btn-container">
-                                                    <a href="portfolio-single.html"
+                                                    <a href="Design-Details?value=Drawing Room"
                                                        className="pq-button pq-button-link">
                                                         <div className="pq-button-block">
                                                             <div className="pq-svg">
@@ -767,12 +792,12 @@ function Home() {
                                                          alt=""/>
                                                 </div>
                                                 <div className="pq-portfolio-info">
-                                                    <h5><a href="portfolio-single.html">Bamboo flooring</a>
+                                                    <h5><a href="Design-Details?value=Drawing Room">Bamboo flooring</a>
                                                     </h5>
-                                                    <span> <a href="portfolio-single.html">tiles</a> </span>
+                                                    <span> <a href="Design-Details?value=Drawing Room">tiles</a> </span>
                                                 </div>
                                                 <div className="pq-btn-container">
-                                                    <a href="portfolio-single.html"
+                                                    <a href="Design-Details?value=Drawing Room"
                                                        className="pq-button pq-button-link">
                                                         <div className="pq-button-block">
                                                             <div className="pq-svg">
@@ -817,12 +842,12 @@ function Home() {
                                                          alt=""/>
                                                 </div>
                                                 <div className="pq-portfolio-info">
-                                                    <h5><a href="portfolio-single.html">Stone Cladding</a></h5>
-                                                    <span> <a href="portfolio-single.html">flooring</a>
+                                                    <h5><a href="Design-Details?value=Drawing Room">Stone Cladding</a></h5>
+                                                    <span> <a href="Design-Details?value=Drawing Room">flooring</a>
                                             </span>
                                                 </div>
                                                 <div className="pq-btn-container">
-                                                    <a href="portfolio-single.html"
+                                                    <a href="Design-Details?value=Drawing Room"
                                                        className="pq-button pq-button-link">
                                                         <div className="pq-button-block">
                                                             <div className="pq-svg">
@@ -867,12 +892,12 @@ function Home() {
                                                          alt=""/>
                                                 </div>
                                                 <div className="pq-portfolio-info">
-                                                    <h5><a href="portfolio-single.html">Ceramic Tiles</a></h5>
-                                                    <span> <a href="portfolio-single.html">Laminate</a>
+                                                    <h5><a href="Design-Details?value=Drawing Room">Ceramic Tiles</a></h5>
+                                                    <span> <a href="Design-Details?value=Drawing Room">Laminate</a>
                                             </span>
                                                 </div>
                                                 <div className="pq-btn-container">
-                                                    <a href="portfolio-single.html"
+                                                    <a href="Design-Details?value=Drawing Room"
                                                        className="pq-button pq-button-link">
                                                         <div className="pq-button-block">
                                                             <div className="pq-svg">
@@ -917,11 +942,11 @@ function Home() {
                                                          alt=""/>
                                                 </div>
                                                 <div className="pq-portfolio-info">
-                                                    <h5><a href="portfolio-single.html">Wall Carpeting</a></h5>
-                                                    <span> <a href="portfolio-single.html">stone</a> </span>
+                                                    <h5><a href="Design-Details?value=Drawing Room">Wall Carpeting</a></h5>
+                                                    <span> <a href="Design-Details?value=Drawing Room">stone</a> </span>
                                                 </div>
                                                 <div className="pq-btn-container">
-                                                    <a href="portfolio-single.html"
+                                                    <a href="Design-Details?value=Drawing Room"
                                                        className="pq-button pq-button-link">
                                                         <div className="pq-button-block">
                                                             <div className="pq-svg">

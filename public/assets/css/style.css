@@ -57,7 +57,7 @@ Fonts
 Moz Selection
 ++++++++++++++++++++++++++++++++++++++++*/
 :root {
-	--primary-color: #e6af5d;
+	--primary-color: #e91f25;
 	--dark-color: #30373f;
 	--secondary-color: #616161;
 	--grey-color: #f6f4f5;
@@ -2485,7 +2485,7 @@ header#pq-header.pq-header-style-1 .pq-bottom-header .navbar .navbar-nav>li>a:be
 	content: "";
 	width: 0;
 	height: 2px;
-	background: var(--dark-color);
+	background: var(--primary-color);
 	transition: all 0.5s ease;
 	left: 0;
 	right: 0;
