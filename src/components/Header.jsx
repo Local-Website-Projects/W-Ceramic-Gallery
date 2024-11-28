@@ -71,11 +71,11 @@ function Header() {
                                                         <li className={`menu-item ${isActive("/")}`}>
                                                             <Link to="/">Home</Link>
                                                         </li>
-                                                        <li className={`menu-item ${isActive("/About")}`}>
-                                                            <Link to="/About">About</Link>
-                                                        </li>
                                                         <li className={`menu-item ${isActive("/Tiles-Collection")}`}>
                                                             <Link to="/Tiles-Collection">Tiles Collection</Link>
+                                                        </li>
+                                                        <li className={`menu-item ${isActive("/About")}`}>
+                                                            <Link to="/">Sanitary Collection</Link>
                                                         </li>
                                                         <li className={`menu-item ${isActive("/Room-Visualizer")}`}>
                                                             <Link to="/Room-Visualizer">Room Visualizer</Link>
@@ -96,7 +96,7 @@ function Header() {
                                                 </div>
                                             </div>
                                             <div className="pq-menu-search-block">
-                                                <a href="javascript:void(0)" className="pq-tools-serach-button"
+                                            <a href="javascript:void(0)" className="pq-tools-serach-button"
                                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvassearch"><i
                                                     className="ti-search"></i></a>
                                                 <div className="offcanvas offcanvas-top" tabIndex="-1"

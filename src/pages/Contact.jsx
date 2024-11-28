@@ -7,7 +7,7 @@ function Contact() {
     return (
         <div>
             <Header></Header>
-            <Breadcrumb title="Tile Calculator"></Breadcrumb>
+            <Breadcrumb title="Contact Us"></Breadcrumb>
             <section className="contact-us pb-xl-0">
                 <div className="container">
                     <div className="row">
