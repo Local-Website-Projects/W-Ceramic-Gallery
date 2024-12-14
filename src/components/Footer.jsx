@@ -53,8 +53,8 @@ function Footer() {
                                         <p>There are many variations of passages of Lorem the majority suffer</p>
                                         <ul>
                                             <li>
-                                                <a href="tel:+1800001658"><i className="fas fa-phone-alt"></i>
-                                                    <span> +1800-001-658</span>
+                                                <a href="tel:+8801729277768"><i className="fas fa-phone-alt"></i>
+                                                    <span> +880 1729 277 768</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -107,15 +107,15 @@ function Footer() {
                                                         <span>Themeforest, Envato HQ 24 Fifth st., Los Angeles, USA </span>
                                                     </li>
                                                     <li>
-                                                        <a href="tel:+1800001658">
+                                                        <a href="tel:+8801729277768">
                                                             <i className="fas fa-phone"></i>
-                                                            <span> +1800-001-658</span>
+                                                            <span> +880 1729 277 768</span>
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="mailto:Info@Peacefulthemes.Com">
+                                                        <a href="mailto:test@test.com">
                                                             <i className="fas fa-envelope"></i>
-                                                            <span>Info@Peacefulthemes.Com</span>
+                                                            <span>test@test.com</span>
                                                         </a>
                                                     </li>
                                                 </ul>

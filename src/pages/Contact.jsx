@@ -45,7 +45,7 @@ function Contact() {
                                 </div>
                                 <div className="pq-icon-box-content">
                                     <h6>Email-Us</h6>
-                                    <p className="mb-0">info@peacefulthemes.com<br/>info2@peacefulthemes.com</p>
+                                    <p className="mb-0">info@test.com<br/>info2@test2.com</p>
                                 </div>
                             </div>
                         </div>
